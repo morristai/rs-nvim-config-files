@@ -9,6 +9,7 @@ vim.g.mapleader = " " -- works across all nvim files
 -- Color theme
 require('kanagawa').setup({
     keywordStyle = { italic = false, bold = true },
+    colors={ sumiInk1 = "#181716" }
 })
 vim.cmd("colorscheme kanagawa")
 
