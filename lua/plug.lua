@@ -1,6 +1,10 @@
 --[[ plug.lua ]]
 
 return require('packer').startup(function()
+    -- ================ TODO ================
+    -- use 'mg979/vim-visual-multi'  -- Multiple cursors plugin for vim/neovim
+    -- ======================================
+
     use "rebelot/kanagawa.nvim"
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use 'xiyaowong/nvim-transparent' -- enable transparency

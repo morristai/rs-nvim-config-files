@@ -95,7 +95,7 @@ require("better_escape").setup {
 require 'FTerm'.setup({
     border     = 'single',
     -- cmd = os.getenv('SHELL'),
-    cmd        = 'fish',
+    cmd        = 'zsh',
     blend      = 0,
     dimensions = {
         height = 0.9,
@@ -580,3 +580,37 @@ local actions = require("diffview.actions")
 
 require("diffview").setup({
 })
+
+
+------------------------------------
+-- Neovide                      ----
+-- -https://neovide.dev/configuration.html
+-- ---------------------------------
+if vim.g.neovide then
+  vim.opt.guifont = "JetBrainsMono Nerd Font, PingFang TC:h14"
+  vim.g.remember_window_size = true
+  vim.g.remember_window_position = true
+  vim.g.neovide_refresh_rate = 60
+--   vim.g.neovide_cursor_vfx_mode = 'ripple'
+--   vim.g.neovide_cursor_animation_length = 0.03
+--   vim.g.neovide_cursor_trail_size = 0.9
+
+--   local function toggleTransparency()
+--     if vim.g.neovide_transparency == 1.0 then
+--       vim.cmd "let g:neovide_transparency=0.8"
+--     else
+--       vim.cmd "let g:neovide_transparency=1.0"
+--     end
+--   end
+
+--   local function toggleFullscreen()
+--     if vim.g.neovide_fullscreen == false then
+--       vim.cmd "let g:neovide_fullscreen=v:true"
+--     else
+--       vim.cmd "let g:neovide_fullscreen=v:false"
+--     end
+--   end
+
+--   vim.keymap.set("n", "<F11>", toggleFullscreen, { silent = true })
+--   vim.keymap.set("n", "<F10>", toggleTransparency, { silent = true })
+end
