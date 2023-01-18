@@ -1,5 +1,5 @@
 -- exec the command to install
--- nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+-- nvim -nu ~/.config/nvim/packer_init.lua +PackerSync
 
 local ensure_packer = function()
     local fn = vim.fn

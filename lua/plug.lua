@@ -16,7 +16,9 @@ return require('packer').startup(function()
     use 'williamboman/mason-lspconfig.nvim' -- closes gaps with mason
     use 'tanvirtin/monokai.nvim' -- Color scheme
     use { 'kyazdani42/nvim-tree.lua', -- Filesystem navigation
-        requires = 'kyazdani42/nvim-web-devicons' } -- Filesystem icons
+        requires = 'kyazdani42/nvim-web-devicons', -- Filesystem icons
+        tag = 'nightly'
+    }
     use { 'nvim-lualine/lualine.nvim', -- Statusline
         requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use {

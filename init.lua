@@ -9,7 +9,7 @@ vim.g.mapleader = " " -- works across all nvim files
 -- Color theme
 require('kanagawa').setup({
     keywordStyle = { italic = false, bold = true },
-    colors={ sumiInk1 = "#181716" }
+    colors = { sumiInk1 = "#181716" }
 })
 vim.cmd("colorscheme kanagawa")
 
@@ -48,37 +48,37 @@ require('lualine').setup {
 -- Symbols Outline (new tagbar)
 require("symbols-outline").setup {
     show_guides = false,
-    position = 'left',
-    width = 35,
+    position = 'right',
+    width = 30,
     wrap = false,
     keymaps = { fold = "h", unfold = "l", fold_all = "zM", unfold_all = "zR" },
     symbols = {
-        File = { icon = "", hl = "TSURI" },
-        Module = { icon = "全", hl = "TSNamespace" },
-        Namespace = { icon = "凜", hl = "TSNamespace" },
-        Package = { icon = "", hl = "TSNamespace" },
-        Class = { icon = "", hl = "TSType" },
-        Method = { icon = "", hl = "TSMethod" },
-        Property = { icon = "", hl = "TSMethod" },
-        Field = { icon = "", hl = "TSField" },
-        Constructor = { icon = "", hl = "TSConstructor" },
-        Enum = { icon = "", hl = "TSType" },
-        Interface = { icon = "ﰮ", hl = "TSType" },
-        Function = { icon = "", hl = "TSFunction" },
-        Variable = { icon = "", hl = "TSConstant" },
-        Constant = { icon = "", hl = "TSConstant" },
-        String = { icon = "", hl = "TSString" },
-        Number = { icon = "#", hl = "TSNumber" },
-        Boolean = { icon = "⊨", hl = "TSBoolean" },
-        Array = { icon = "", hl = "TSConstant" },
-        Object = { icon = "", hl = "TSType" },
-        Key = { icon = "🔐", hl = "TSType" },
-        Null = { icon = "ﳠ", hl = "TSType" },
-        EnumMember = { icon = "", hl = "TSField" },
-        Struct = { icon = "", hl = "TSType" },
-        Event = { icon = "🗲", hl = "TSType" },
-        Operator = { icon = "+", hl = "TSOperator" },
-        TypeParameter = { icon = "", hl = "TSParameter" }
+        File = { icon = "", hl = "@text.uri" },
+        Module = { icon = "全", hl = "@namespace" },
+        Namespace = { icon = "凜", hl = "@namespacee" },
+        Package = { icon = "", hl = "@namespacee" },
+        Class = { icon = "", hl = "@type" },
+        Method = { icon = "", hl = "@method" },
+        Property = { icon = "", hl = "@method" },
+        Field = { icon = "", hl = "@field" },
+        Constructor = { icon = "", hl = "@constructor" },
+        Enum = { icon = "", hl = "@type" },
+        Interface = { icon = "ﰮ", hl = "@type" },
+        Function = { icon = "", hl = "@function" },
+        Variable = { icon = "", hl = "@constant" },
+        Constant = { icon = "", hl = "@constant" },
+        String = { icon = "", hl = "@string" },
+        Number = { icon = "#", hl = "@number" },
+        Boolean = { icon = "⊨", hl = "@boolean" },
+        Array = { icon = "", hl = "@constant" },
+        Object = { icon = "", hl = "@type" },
+        Key = { icon = "🔐", hl = "@type" },
+        Null = { icon = "ﳠ", hl = "@type" },
+        EnumMember = { icon = "", hl = "@field" },
+        Struct = { icon = "", hl = "@type" },
+        Event = { icon = "🗲", hl = "@type" },
+        Operator = { icon = "+", hl = "@operator" },
+        TypeParameter = { icon = "", hl = "@parameter" }
     },
 }
 
@@ -240,7 +240,7 @@ require('telescope').setup {
             "^./target/",
             "LICENSE*"
         },
-        layout_strategy = 'vertical',
+        layout_strategy = 'flex',
         layout_config = { height = 0.95, width = 0.95 },
     },
     extensions = {
@@ -587,30 +587,30 @@ require("diffview").setup({
 -- -https://neovide.dev/configuration.html
 -- ---------------------------------
 if vim.g.neovide then
-  vim.opt.guifont = "JetBrainsMono Nerd Font, PingFang TC:h14"
-  vim.g.remember_window_size = true
-  vim.g.remember_window_position = true
-  vim.g.neovide_refresh_rate = 60
---   vim.g.neovide_cursor_vfx_mode = 'ripple'
---   vim.g.neovide_cursor_animation_length = 0.03
---   vim.g.neovide_cursor_trail_size = 0.9
+    vim.opt.guifont = { "JetBrainsMono NF, PingFang TC", ":h14" }
+    vim.g.remember_window_size = true
+    vim.g.remember_window_position = true
+    vim.g.neovide_refresh_rate = 60
+    --   vim.g.neovide_cursor_vfx_mode = 'ripple'
+    --   vim.g.neovide_cursor_animation_length = 0.03
+    --   vim.g.neovide_cursor_trail_size = 0.9
 
---   local function toggleTransparency()
---     if vim.g.neovide_transparency == 1.0 then
---       vim.cmd "let g:neovide_transparency=0.8"
---     else
---       vim.cmd "let g:neovide_transparency=1.0"
---     end
---   end
+    --   local function toggleTransparency()
+    --     if vim.g.neovide_transparency == 1.0 then
+    --       vim.cmd "let g:neovide_transparency=0.8"
+    --     else
+    --       vim.cmd "let g:neovide_transparency=1.0"
+    --     end
+    --   end
 
---   local function toggleFullscreen()
---     if vim.g.neovide_fullscreen == false then
---       vim.cmd "let g:neovide_fullscreen=v:true"
---     else
---       vim.cmd "let g:neovide_fullscreen=v:false"
---     end
---   end
+    --   local function toggleFullscreen()
+    --     if vim.g.neovide_fullscreen == false then
+    --       vim.cmd "let g:neovide_fullscreen=v:true"
+    --     else
+    --       vim.cmd "let g:neovide_fullscreen=v:false"
+    --     end
+    --   end
 
---   vim.keymap.set("n", "<F11>", toggleFullscreen, { silent = true })
---   vim.keymap.set("n", "<F10>", toggleTransparency, { silent = true })
+    --   vim.keymap.set("n", "<F11>", toggleFullscreen, { silent = true })
+    --   vim.keymap.set("n", "<F10>", toggleTransparency, { silent = true })
 end
