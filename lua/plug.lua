@@ -47,7 +47,7 @@ return require('packer').startup(function()
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } -- Make telescope faster
     use 'nvim-telescope/telescope.nvim' -- Fuzzy finder
     use 'nvim-telescope/telescope-media-files.nvim' -- image files preview in telescope
-    use 'numToStr/FTerm.nvim' -- Terminal in Lu-a
+    use 'numToStr/FTerm.nvim' -- Terminal in Lua
     use 'BurntSushi/ripgrep' -- Telescope grep
     use 'sharkdp/fd' -- Finder
     use 'neovim/nvim-lspconfig' -- Collection of common configurations for the Nvim LSP client

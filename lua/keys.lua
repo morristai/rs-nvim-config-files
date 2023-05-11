@@ -45,10 +45,10 @@ map("n", "<leader>w", ":w<CR>")
 map("n", "<leader>q", ":q<CR>")
 map("n", "<leader>qa", ":qa<CR>")
 
--- Window navigation
-map("n", "<C-j>", "<C-w>j<C-w>")
-map("n", "<C-h>", "<C-w>h<C-w>")
-map("n", "<C-k>", "<C-w>k<C-w>")
+-- Window navigation (Vim heresy)
+map("n", "<C-k>", "<C-w>j<C-w>")
+map("n", "<C-j>", "<C-w>h<C-w>")
+map("n", "<C-i>", "<C-w>k<C-w>")
 map("n", "<C-l>", "<C-w>l<C-w>")
 
 -- Hop
@@ -123,7 +123,7 @@ map('n', "<F7>", ":call vimspector#Evaluate()<cr>")
 map('n', "ca", ":lua vim.lsp.buf.code_action()<CR>")
 vim.cmd([[
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <c-h>     <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> K         <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gi        <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gc        <cmd>lua vim.lsp.buf.incoming_calls()<CR>
@@ -197,3 +197,9 @@ vim.keymap.set('n', 'cb', '<Plug>(comment_toggle_blockwise_current)')
 -- Toggle in VISUAL mode
 vim.keymap.set('x', 'cc', '<Plug>(comment_toggle_linewise_visual)')
 vim.keymap.set('x', 'cb', '<Plug>(comment_toggle_blockwise_visual)')
+
+-- vim heresy
+map("", "h", "i", { noremap = true})
+map("", "j", "<left>", { noremap = true})
+map("", "k", "<down>", { noremap = true})
+map("", "i", "<up>", { noremap = true})

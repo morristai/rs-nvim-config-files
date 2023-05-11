@@ -103,7 +103,7 @@ vim.diagnostic.config({
     underline = false,
     severity_sort = true,
     float = {
-        border = 'single',
+        border = 'single', -- rounded
         source = 'always',
         header = '',
         prefix = '- ',

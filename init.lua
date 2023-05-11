@@ -270,7 +270,8 @@ require("mason").setup({
             package_pending = "",
             package_uninstalled = "",
         },
-    }
+    },
+    PATH = "prepend", -- "skip" seems to cause the spawning error
 })
 require("mason-lspconfig").setup()
 
@@ -316,7 +317,7 @@ rt.setup({
 
 -- LUA
 -- -------------------------------------
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
             runtime = {
@@ -591,7 +592,7 @@ if vim.g.neovide then
     vim.g.remember_window_size = true
     vim.g.remember_window_position = true
     vim.g.neovide_refresh_rate = 60
-    --   vim.g.neovide_cursor_vfx_mode = 'ripple'
+    vim.g.neovide_cursor_vfx_mode = "pixiedust"
     --   vim.g.neovide_cursor_animation_length = 0.03
     --   vim.g.neovide_cursor_trail_size = 0.9
 
