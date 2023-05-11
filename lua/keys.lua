@@ -1,5 +1,4 @@
 --[[ keys.lua ]]
-
 -- Functional wrapper for mapping custom keybindings
 -- mode (as in Vim modes like Normal/Insert mode)
 -- lhs (the custom keybinds you need)
@@ -199,7 +198,7 @@ vim.keymap.set('x', 'cc', '<Plug>(comment_toggle_linewise_visual)')
 vim.keymap.set('x', 'cb', '<Plug>(comment_toggle_blockwise_visual)')
 
 -- vim heresy
-map("", "h", "i", { noremap = true})
-map("", "j", "<left>", { noremap = true})
-map("", "k", "<down>", { noremap = true})
-map("", "i", "<up>", { noremap = true})
+map("", "h", "i", { noremap = true })
+map("", "j", "<left>", { noremap = true })
+map("", "k", "<down>", { noremap = true })
+map("", "i", "<up>", { noremap = true })
