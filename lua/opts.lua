@@ -72,8 +72,7 @@ opt.splitbelow = true -- bool: Place new window below the current one
 -- vim.wo.foldminlines = 1
 
 -- Format on Save
--- TODO: Fix this (detected while processing BufWritePre Autocommands for "*":)
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 
 -- Vimspector
