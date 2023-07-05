@@ -414,15 +414,15 @@ cmp.setup({
     },
     -- Installed sources:
     sources = {
-        { name = 'path' },                                        -- file paths
+        { name = 'path' },                                                       -- file paths
         { name = 'nvim_lsp',                keyword_length = 1, priority = 10 }, -- from language server
         { name = 'crates',                  keyword_length = 1, priority = 10 },
-        { name = 'luasnip',                 keyword_length = 1, priority = 7 }, -- for lua users
-        { name = 'nvim_lsp_signature_help', priority = 8 },       -- display function signatures with current parameter emphasized
-        { name = 'nvim_lua',                keyword_length = 1, priority = 8 }, -- complete neovim's Lua runtime API such vim.lsp.*
-        { name = 'buffer',                  keyword_length = 1, priority = 5 }, -- source current buffer
+        { name = 'luasnip',                 keyword_length = 1, priority = 7 },  -- for lua users
+        { name = 'nvim_lsp_signature_help', priority = 8 },                      -- display function signatures with current parameter emphasized
+        { name = 'nvim_lua',                keyword_length = 1, priority = 8 },  -- complete neovim's Lua runtime API such vim.lsp.*
+        { name = 'buffer',                  keyword_length = 1, priority = 5 },  -- source current buffer
         -- { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
-        { name = 'calc' },                                        -- source for math calculation
+        { name = 'calc' },                                                       -- source for math calculation
     },
     window = {
         completion = {
@@ -488,6 +488,7 @@ require('nvim-treesitter.configs').setup {
         "http", "javascript", "json", "lua", "make", "markdown", "python", "regex", "ruby", "rust", "toml", "vim",
         "yaml",
         "zig" },
+    ignore_install = { 'help' },
     auto_install = true,
     highlight = {
         enable = true,
