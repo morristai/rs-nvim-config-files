@@ -2,25 +2,37 @@
 -- Impatient for faster loading
 require('impatient')
 
--- LEADER
+-- Set leader key
+vim.api.nvim_set_keymap('', '<Space>', '', { noremap = true, silent = true })
 vim.g.mapleader = " " -- works across all nvim files
 
 -- Color theme
 require('kanagawa').setup({
-    keywordStyle = { italic = false, bold = true },
-    colors = { sumiInk1 = "#181716" }
+    keywordStyle = { italic = false, bold = true }, -- Load "wave" theme when 'background' option is not set
+    theme = "dragon",
+    background = {                                  -- map the value of 'background' option to a theme
+        dark = "dragon",
+        light = "lotus"
+    },
+    -- colors = {
+    --     palette = {
+    --         -- change all usages of these colors
+    --         sumiInk3 = "#0F0F0F",
+    --         sumiInk4 = "#252525",
+    --         -- fujiWhite = "#FFFFFF",
+    --     }
+    -- }
 })
 vim.cmd("colorscheme kanagawa")
 
 -- Highlight colors
 vim.cmd([[
-hi CursorLineNr guifg=#7e9cd8
-" hi FoldColumn guifg=#4a4f54 guibg=#26292c
-hi FoldColumn guifg=#29292c guibg=#26292c
-hi GitSignsAdd guibg=#193549 guifg=#3ad900
-hi GitSignsChange guibg=#193549 guifg=#ffc600
-hi GitSignsDelete guibg=#193549 guifg=#ff2600
-hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
+  hi CursorLineNr guifg=#7e9cd8
+  hi FoldColumn guifg=#29292c guibg=#26292c
+  hi GitSignsAdd guibg=#193549 guifg=#3ad900
+  hi GitSignsChange guibg=#193549 guifg=#ffc600
+  hi GitSignsDelete guibg=#193549 guifg=#ff2600
+  hi ColorColumn guifg=NONE guibg=#204563 gui=NONE
 ]])
 
 -- IMPORTS
@@ -45,6 +57,7 @@ require('lualine').setup {
 
 
 -- Symbols Outline (new tagbar)
+-- TODO: fix showing question marks error
 require("symbols-outline").setup {
     show_guides = false,
     position = 'right',
@@ -468,6 +481,9 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+-- GitHub Copilot
+-- TODO
 
 
 

@@ -29,7 +29,7 @@ return require('packer').startup(function()
     use { 'phaazon/hop.nvim', branch = 'v2' } -- Navitage to any word in the file
     use 'onsails/lspkind.nvim'                -- shows icons in cmp
     use 'lukas-reineke/headlines.nvim'        -- highlights headlines for markdown, other txt files
-    use 'j-hui/fidget.nvim'                   -- sho status of nvim-lsp progress
+    use {'j-hui/fidget.nvim', tag = 'legacy'} -- sho status of nvim-lsp progress
     use 'L3MON4D3/LuaSnip'                    -- snippets for completion
     use 'saadparwaiz1/cmp_luasnip'            -- snippets for completion'
     use {
@@ -50,6 +50,7 @@ return require('packer').startup(function()
     use 'BurntSushi/ripgrep'                                         -- Telescope grep
     use 'sharkdp/fd'                                                 -- Finder
     use 'neovim/nvim-lspconfig'                                      -- Collection of common configurations for the Nvim LSP client
+    -- TODO: use 'github/copilot.vim'                                         -- GitHub Copilot
     use 'hrsh7th/nvim-cmp'                                           -- Completion framework
     use 'hrsh7th/cmp-nvim-lua'
     use 'hrsh7th/cmp-nvim-lsp'                                       -- LSP completion source for nvim-cmp
